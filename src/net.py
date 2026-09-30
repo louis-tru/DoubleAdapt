@@ -103,7 +103,7 @@ class ForecastModel(nn.Module):
         # self.lr = task_config["model"]['kwargs']['lr']
         self.criterion = nn.MSELoss()
         self.model = model
-        self.device = torch.device("cuda")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.need_permute = need_permute
         self.opt = torch.optim.Adam(self.model.parameters(), lr=self.lr, weight_decay=weight_decay)
         if self.device is not None:

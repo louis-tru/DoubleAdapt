@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/SJTU-DMTai/DoubleAdapt",
+  "paper": "https://arxiv.org/abs/2306.09862",
+  "commit": "e20b6e46ccbd2b6b8180ff3db62f68b16721684c",
+  "commit_date": "2024-12-25",
+  "license_note": "官方仓库无LICENSE文件；main.py 头部为 Microsoft MIT License。仅用于 research 实验，不放入 core。",
+  "local_path": "deps/DoubleAdapt",
+  "used_symbols": [
+    "src/model.py:IncrementalManager",
+    "src/model.py:DoubleAdaptManager",
+    "src/net.py:FeatureAdapter",
+    "src/net.py:LabelAdapter",
+    "src/net.py:ForecastModel",
+    "src/net.py:DoubleAdapt",
+    "src/utils.py:TimeAdjuster",
+    "src/utils.py:organize_all_tasks",
+    "src/utils.py:get_rolling_data"
+  ],
+  "vendor_patch": "src/net.py ForecastModel.device 在无CUDA时回退CPU，不改算法。"
+}
